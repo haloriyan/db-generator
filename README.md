@@ -61,3 +61,4 @@ You can give extra attribute like primary key or unique key to your table struct
   }
 }
 ```
+I think you already understand with this. `table1.id` in `primary key` is structure where is set up to be primary. So also with the unique key. `table1` is name of your table, and `id` is structur name of your table.
