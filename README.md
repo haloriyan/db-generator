@@ -13,7 +13,7 @@ git clone https://github.com/haloriyan/db-generator.git
 - Run `create.php` with your browser
 
 # Documentation
-- Database name
+## Database name
 ```
 {
   "namaDb": "myDb"
@@ -22,12 +22,12 @@ git clone https://github.com/haloriyan/db-generator.git
 ```
 I think there's no difficulty here
 
-- Setting up the tables
+## Setting up the tables
 ```
 {
   ...
   "tabel": {
-    "tabel1": [
+    "table1": [
       "id int(11)",
       "name varchar(20)",
       "dummy varchar(10) null"
@@ -35,6 +35,29 @@ I think there's no difficulty here
     "table2":
     "table3":
     "etc"
+  }
+}
+```
+`id`, `name`, and `dummy` are names of your structures table. `int` and `varchar` are datatype of the structure. And `null` is optional. If you dont type it, that mean set to default which mean `not null`.
+
+## Giving extra attribute
+You can give extra attribute like primary key or unique key to your table structure like this
+```
+{
+  "tabel": {
+    "table1" : [ ... ]
+  },
+  "atribut": {
+    "primary key": [
+      "table1.id",
+      "table2.username"
+      "table3.etc"
+    ],
+    "unique key": [
+      "table1.name",
+      "table2.email",
+      "table3.etc"
+    ]
   }
 }
 ```
