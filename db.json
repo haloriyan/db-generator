@@ -1,0 +1,40 @@
+{
+	"namaDb": "contoh",
+	"tabel": {
+		"users":[
+			"iduser int(11)",
+			"nama varchar(50)",
+			"email varchar(100)",
+			"password varchar(50)",
+			"registered int(11)"
+		],
+		"admin": [
+			"idadmin int(11)",
+			"username varchar(40)",
+			"password varchar(40)"
+		],
+		"chat": [
+			"idchat int(11)",
+			"idobrolan int(11)",
+			"iduser int(11)",
+			"pesan text",
+			"dikirim int(11)"
+		],
+		"obrolan": [
+			"idobrolan int(11)",
+			"nama varchar(60)",
+			"member text"
+		]
+	},
+	"atribut": {
+		"primary key":[
+			"users.iduser",
+			"admin.idadmin",
+			"chat.idchat",
+			"obrolan.idobrolan"
+		],
+		"unique key": [
+			"users.email"
+		]
+	}
+}
