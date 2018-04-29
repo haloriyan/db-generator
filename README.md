@@ -1,5 +1,5 @@
 # DB Generator
-This is just simple way to generate/create a database (like migration at Laravel)
+This is just simple way to generate/create a mysql database (like migration at Laravel)
 
 # Installation
 ```
