@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+error_reporting(1);
 
 $get = file_get_contents("db.json");
 $db = json_decode($get, true);
@@ -29,6 +30,7 @@ foreach ($db['tabel'] as $key => $value) {
 	$createDb = mysqli_query($conn, $queryDatabase);
 	$conn = mysqli_connect("localhost", "root", "", $namaDb);
 	$createTable = mysqli_query($conn, $queryTable);
+	$delDummy = mysqli_query($conn, "ALTER TABLE ".$namaTabel." DROP dummy");
 }
 
 foreach ($db['atribut'] as $key => $value) {
