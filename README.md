@@ -13,7 +13,7 @@ git clone https://github.com/haloriyan/db-generator.git
 - Run `create.php` with your browser
 
 # Documentation
-Open `db.json` file to setting up the tables of database
+
 ## Database name
 ```
 {
