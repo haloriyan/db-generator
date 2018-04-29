@@ -1,55 +1,17 @@
 {
-	"namaDb": "ig",
+	"namaDb": "dbSaya",
 	"tabel": {
-		"following": [
-			"idfoll int(20)",
-			"user varchar(40)",
-			"follow varchar(40)",
-			"waktu int(11)"
-		],
-		"komentar": [
-			"idkomen int(11)",
-			"idpos int(11)",
-			"user varchar(40)",
-			"komentar varchar(500)",
-			"dikirim int(11)"
-		],
-		"notifikasi": [
-			"idnotif int(11)",
-			"user varchar(40)",
-			"konten varchar(200)",
-			"url varchar(255)",
-			"time int(11)"
-		],
-		"pos": [
-			"idpos int(11)",
-			"username varchar(40)",
-			"foto varchar(255)",
-			"konten varchar(1100)",
-			"likers longtext",
-			"dikirim int(11)"
-		],
 		"user": [
-			"iduser int(11)",
-			"nama varchar(50)",
-			"email varchar(100)",
-			"username varchar(40)",
-			"password varchar(25)",
-			"bio varchar(255)",
-			"followers text",
-			"following text",
-			"foto_profil varchar(100)",
-			"komentar int(1)",
-			"privat int(1)"
+			"id int(11)",
+			"name varchar(50)",
+			"email varchar(50)",
+			"password varchar(50)",
+			"registered int(11)"
 		]
 	},
 	"atribut": {
 		"primary key":[
-			"user.iduser",
-			"pos.idpos",
-			"notifikasi.idnotif",
-			"komentar.idkomen",
-			"following.idfoll"
+			"user.id",
 		],
 		"unique key": [
 			"user.email"
