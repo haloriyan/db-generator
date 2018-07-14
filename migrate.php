@@ -1,20 +1,19 @@
 <?php
 include 'config.php';
-error_reporting(1);
 
 $get = file_get_contents("db.json");
 $db = json_decode($get, true);
 
-$namaDb = $db['namaDb'];
+$namaDb = $dbName;
 
-$conn = mysqli_connect($host, $user, $pass);
+$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword);
 
 // cek
 
-$cek = mysqli_connect($host, $user, $pass, $namaDb);
+$cek = mysqli_connect($dbHost, $dbUsername, $dbPassword, $namaDb);
 if($cek) {
 	$drop = mysqli_query($conn, "DROP DATABASE ".$namaDb);
-}
+}else {
 foreach ($db['tabel'] as $key => $value) {
 	$namaTabel= $key;
 	$queryDatabase = "CREATE DATABASE ".$namaDb;
@@ -28,7 +27,7 @@ foreach ($db['tabel'] as $key => $value) {
 	}
 	$queryTable .= " dummy int(1) not null);";
 	$createDb = mysqli_query($conn, $queryDatabase);
-	$conn = mysqli_connect("localhost", "root", "", $namaDb);
+	$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $namaDb);
 	$createTable = mysqli_query($conn, $queryTable);
 	$delDummy = mysqli_query($conn, "ALTER TABLE ".$namaTabel." DROP dummy");
 }
@@ -44,3 +43,4 @@ foreach ($db['atribut'] as $key => $value) {
 }
 
 echo "SUCCESS!!!";
+}
