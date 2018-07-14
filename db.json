@@ -10,10 +10,10 @@
 	},
 	"atribut": {
 		"primary key":[
-			"user.id"
+			"users.id"
 		],
 		"unique key": [
-			"user.email"
+			"users.email"
 		]
 	}
 }
