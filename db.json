@@ -10,7 +10,7 @@
 	},
 	"atribut": {
 		"primary key":[
-			"user.id",
+			"user.id"
 		],
 		"unique key": [
 			"user.email"

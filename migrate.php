@@ -1,4 +1,5 @@
 <?php
+error_reporting(1);
 include 'config.php';
 
 $get = file_get_contents("db.json");
